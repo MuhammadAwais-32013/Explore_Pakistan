@@ -1,12 +1,9 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --background: #f0f0f0;
-    --foreground: #333;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-  }
+/* Optionally, add any custom global styles here */
+body {
+  font-family: 'Inter', sans-serif;
+}
