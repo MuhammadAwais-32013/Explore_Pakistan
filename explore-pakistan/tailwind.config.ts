@@ -1,4 +1,3 @@
-// src/tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -10,11 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#2E7D32",    // Dark green
-        secondary: "#FFEB3B",  // Bright yellow
-        accent: "#66BB6A",     // Lighter green
-        neutral: "#FAFAFA",    // Light neutral background
-        text: "#333333",       // Dark gray for text
+        // Core Brand Colors
+        primary: "#2E7D32",         // Deep green that reflects Pakistan’s rich landscapes and heritage.
+        secondary: "#FFEB3B",       // Vivid yellow exuding energy and optimism.
+        
+        // Supporting Accent Color
+        accent: "#009688",          // A modern teal accent that adds vibrancy and balances the palette.
+        
+        // Background & Neutral Elements
+        background: "#F9F9F9",      // A clean, crisp background that enhances content focus.
+        text: "#212121",            // Dark, legible text to ensure excellent readability and accessibility.
+        
+        // Interaction Variants for better user feedback
+        "primary-dark": "#1B5E20",   // A richer green for hover/active states on primary elements.
+        "secondary-light": "#FFF59D",// A softer yellow for subtle hover effects.
+        "accent-light": "#4DB6AC",   // A lighter teal for gentle interactive cues.
       },
     },
   },

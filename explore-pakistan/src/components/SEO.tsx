@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  keywords = 'travel, pakistan, tourism, destinations',
+  keywords = 'travel, pakistan, tourism, destinations, northern areas',
   url = 'https://explorepakistan.com',
   image = '/images/hero.jpg'
 }) => {

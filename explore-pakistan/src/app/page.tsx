@@ -12,6 +12,30 @@ export default function Home() {
       slug: 'lahore-fort',
     },
     {
+      title: 'Lahore Fort',
+      description: 'Discover the rich history and architecture of Lahore Fort.',
+      imageUrl: '/images/lahore-fort.jpg',
+      slug: 'lahore-fort',
+    },
+    {
+      title: 'Lahore Fort',
+      description: 'Discover the rich history and architecture of Lahore Fort.',
+      imageUrl: '/images/lahore-fort.jpg',
+      slug: 'lahore-fort',
+    },
+    {
+      title: 'Hunza Valley',
+      description: 'Experience breathtaking views and natural beauty in Hunza Valley.',
+      imageUrl: '/images/hunza-valley.jpg',
+      slug: 'hunza-valley',
+    },
+    {
+      title: 'Hunza Valley',
+      description: 'Experience breathtaking views and natural beauty in Hunza Valley.',
+      imageUrl: '/images/hunza-valley.jpg',
+      slug: 'hunza-valley',
+    },
+    {
       title: 'Hunza Valley',
       description: 'Experience breathtaking views and natural beauty in Hunza Valley.',
       imageUrl: '/images/hunza-valley.jpg',

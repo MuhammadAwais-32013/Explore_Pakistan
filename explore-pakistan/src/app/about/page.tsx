@@ -1,7 +1,7 @@
 // pages/about.tsx
 import type { NextPage } from 'next'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+// import Header from '../../components/Header'
+// import Footer from '../../components/Footer'
 
 const About: NextPage = () => (
   <div className="min-h-screen flex flex-col bg-secondary text-text">
