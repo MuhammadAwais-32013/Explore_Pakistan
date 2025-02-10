@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 
@@ -44,35 +42,30 @@ const destinations: { title: string; href: string; description: string }[] = [
 
 export default function DestinationDropdown() {
   return (
-    // Outer container: using "group" enables hover-based visibility for the dropdown panel
+    // The outer container uses group hover to control the visibility of the dropdown
     <div className="relative group">
-      {/* Dropdown trigger with consistent styling */}
-      <span className="cursor-pointer text-white hover:text-white transition-colors">
+      {/* Dropdown trigger */}
+      <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
         Destinations
       </span>
-      {/* Dropdown panel with a wider width (500px), gradient background, and smooth transition */}
+      {/* Dropdown panel with smooth transition and two-column grid layout */}
       <div
         className="
-          absolute left-0 mt-2 w-[500px] rounded-lg 
-          bg-gradient-to-r from-indigo-500 to-purple-500
-          shadow-lg ring-1 ring-black ring-opacity-50
+          absolute left-0 mt-2 w-64 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5
           transition-all duration-300 transform opacity-0 scale-95
-          group-hover:opacity-100 group-hover:scale-100 z-10
+          group-hover:opacity-100 group-hover:scale-100
+          z-10
         "
       >
-        <ul className="grid grid-cols-2 gap-4 p-6">
+        <ul className="grid grid-cols-2 gap-3 p-4">
           {destinations.map((dest) => (
             <li key={dest.title}>
               <Link
                 href={dest.href}
-                className="
-                  block px-4 py-3 text-base text-white 
-                  hover:bg-white hover:text-indigo-500 
-                  transition-colors rounded-md
-                "
+                className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
               >
-                <div className="font-bold">{dest.title}</div>
-                <p className="mt-1 text-sm opacity-90">
+                <div className="font-medium">{dest.title}</div>
+                <p className="mt-1 text-xs text-gray-500">
                   {dest.description}
                 </p>
               </Link>
