@@ -1,33 +1,70 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/types/**/*.{ts,tsx}"
   ],
   theme: {
-    extend: {
-      colors: {
-        // Core Brand Colors
-        primary: "#2E7D32",         // Deep green that reflects Pakistan’s rich landscapes and heritage.
-        secondary: "#FFEB3B",       // Vivid yellow exuding energy and optimism.
-        
-        // Supporting Accent Color
-        accent: "#009688",          // A modern teal accent that adds vibrancy and balances the palette.
-        
-        // Background & Neutral Elements
-        background: "#F9F9F9",      // A clean, crisp background that enhances content focus.
-        text: "#212121",            // Dark, legible text to ensure excellent readability and accessibility.
-        
-        // Interaction Variants for better user feedback
-        "primary-dark": "#1B5E20",   // A richer green for hover/active states on primary elements.
-        "secondary-light": "#FFF59D",// A softer yellow for subtle hover effects.
-        "accent-light": "#4DB6AC",   // A lighter teal for gentle interactive cues.
-      },
-    },
+  	extend: {
+  		colors: {
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+        "accent-foreground": "#ffffff",  // white text on accent background
+        "muted-foreground": "#6b7280",
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			background: 'hsl(var(--background))',
+  			text: '#212121',
+  			'primary-dark': '#1B5E20',
+  			'secondary-light': '#FFF59D',
+  			'accent-light': '#4DB6AC',
+  			foreground: 'hsl(var(--foreground))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
 
 export default config

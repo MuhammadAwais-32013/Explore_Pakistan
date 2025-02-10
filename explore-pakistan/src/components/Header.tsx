@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import DestinationMenue from './DestinationMenu'
+import DestinationMenu from './DestinationMenu';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -35,11 +36,12 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/destinations">
-                <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
-                  Destinations
-                </span>
-              </Link>
+              {/* <Link href="/destinations"> */}
+              <span className="cursor-pointer text-black border-collapse hover:text-secondary-light transition-colors">
+  {/* <DestinationMenue></DestinationMenue> */}
+  <DestinationMenu/>
+</span>
+              {/* </Link> */}
             </li>
             <li>
               <Link href="/about">
