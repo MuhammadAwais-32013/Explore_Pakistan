@@ -1,11 +1,11 @@
-// src/components/Header.tsx
-'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="bg-primary shadow-md">
@@ -13,13 +13,13 @@ export default function Header() {
         {/* Logo and Site Title */}
         <div className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.png"  // Ensure this image exists in the public/images folder
             alt="Explore Pakistan Logo"
             width={50}
             height={50}
             className="rounded-full"
           />
-          <span className="ml-2 text-2xl font-bold text-secondary">
+          <span className="ml-2 text-2xl font-bold text-accent">
             Explore Pakistan
           </span>
         </div>
@@ -72,9 +72,19 @@ export default function Header() {
             xmlns="http://www.w3.org/2000/svg"
           >
             {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 8h16M4 16h16"
+              />
             )}
           </svg>
         </button>
@@ -128,5 +138,5 @@ export default function Header() {
         </nav>
       )}
     </header>
-  )
+  );
 }
