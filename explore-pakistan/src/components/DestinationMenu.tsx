@@ -40,34 +40,30 @@ const destinations: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function DestinationDropdown() {
+export default function DestinationMenu() {
   return (
-    // The outer container uses group hover to control the visibility of the dropdown
     <div className="relative group">
-      {/* Dropdown trigger */}
       <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
         Destinations
       </span>
-      {/* Dropdown panel with smooth transition and two-column grid layout */}
       <div
         className="
-          absolute left-0 mt-2 w-64 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5
+          absolute left-0 mt-2 w-80 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5
           transition-all duration-300 transform opacity-0 scale-95
           group-hover:opacity-100 group-hover:scale-100
           z-10
         "
       >
-        <ul className="grid grid-cols-2 gap-3 p-4">
+        <ul className="grid grid-cols-2 gap-4 p-4">
           {destinations.map((dest) => (
             <li key={dest.title}>
-              <Link
-                href={dest.href}
-                className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-              >
-                <div className="font-medium">{dest.title}</div>
-                <p className="mt-1 text-xs text-gray-500">
-                  {dest.description}
-                </p>
+              <Link href={dest.href} legacyBehavior>
+                <a className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+                  <div className="font-medium">{dest.title}</div>
+                  <p className="mt-1 text-xs text-gray-500">
+                    {dest.description}
+                  </p>
+                </a>
               </Link>
             </li>
           ))}

@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import DestinationMenue from './DestinationMenu'
 import DestinationMenu from './DestinationMenu';
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-primary shadow-md">
+    <header className="bg-primary shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo and Site Title */}
         <div className="flex items-center">
@@ -20,8 +20,8 @@ export default function Header() {
             height={50}
             className="rounded-full"
           />
-          <span className="ml-2 text-2xl font-bold text-accent">
-            Explore Pakistan
+          <span className="ml-2 text-2xl font-bold" style={{ color: '#FFD700' }}>
+            Explore <span style={{ color: '#008000' }}>Pakistan</span>
           </span>
         </div>
 
@@ -29,32 +29,37 @@ export default function Header() {
         <nav className="hidden md:flex">
           <ul className="flex space-x-6">
             <li>
-              <Link href="/">
-                <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
+              <Link href="/" legacyBehavior>
+                <a className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
                   Home
-                </span>
+                </a>
               </Link>
             </li>
-            <li>
-              {/* <Link href="/destinations"> */}
-              <span className="cursor-pointer text-black border-collapse hover:text-secondary-light transition-colors">
-  {/* <DestinationMenue></DestinationMenue> */}
-  <DestinationMenu/>
-</span>
-              {/* </Link> */}
+            <li className="relative group">
+              <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
+              
+              <DestinationMenu />
+              </span>
             </li>
             <li>
-              <Link href="/about">
-                <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
+              <Link href="/about" legacyBehavior>
+                <a className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
                   About
-                </span>
+                </a>
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <span className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
+              <Link href="/contact" legacyBehavior>
+                <a className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
                   Contact
-                </span>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" legacyBehavior>
+                <a className="cursor-pointer text-secondary hover:text-secondary-light transition-colors">
+                  Blog
+                </a>
               </Link>
             </li>
           </ul>
@@ -97,43 +102,53 @@ export default function Header() {
         <nav className="md:hidden bg-primary">
           <ul className="px-6 pb-4">
             <li className="py-2">
-              <Link href="/">
-                <span
+              <Link href="/" legacyBehavior>
+                <a
                   onClick={() => setMenuOpen(false)}
                   className="block text-secondary hover:text-secondary-light transition-colors"
                 >
                   Home
-                </span>
+                </a>
               </Link>
             </li>
             <li className="py-2">
-              <Link href="/destinations">
-                <span
+              <Link href="/destinations" legacyBehavior>
+                <a
                   onClick={() => setMenuOpen(false)}
                   className="block text-secondary hover:text-secondary-light transition-colors"
                 >
                   Destinations
-                </span>
+                </a>
               </Link>
             </li>
             <li className="py-2">
-              <Link href="/about">
-                <span
+              <Link href="/about" legacyBehavior>
+                <a
                   onClick={() => setMenuOpen(false)}
                   className="block text-secondary hover:text-secondary-light transition-colors"
                 >
                   About
-                </span>
+                </a>
               </Link>
             </li>
             <li className="py-2">
-              <Link href="/contact">
-                <span
+              <Link href="/contact" legacyBehavior>
+                <a
                   onClick={() => setMenuOpen(false)}
                   className="block text-secondary hover:text-secondary-light transition-colors"
                 >
                   Contact
-                </span>
+                </a>
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link href="/blog" legacyBehavior>
+                <a
+                  onClick={() => setMenuOpen(false)}
+                  className="block text-secondary hover:text-secondary-light transition-colors"
+                >
+                  Blog
+                </a>
               </Link>
             </li>
           </ul>
